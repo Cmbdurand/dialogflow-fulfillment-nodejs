@@ -70,6 +70,14 @@ class V1Agent {
     debug(`Input contexts: ${JSON.stringify(this.agent.contexts)}`);
 
     /**
+     * Dialogflow fulfillment included in the request or null if no value
+     * https://dialogflow.com/docs/fulfillment
+     * * @type {string}
+     */
+    this.agent.fulfillment = this.agent.request_.body.result.fulfillment;
+    debug(`Input fulfillment: ${JSON.stringify(this.agent.fulfillment)}`);
+
+    /**
      * Dialogflow source included in the request or null if no value
      * https://dialogflow.com/docs/reference/agent/query#query_parameters_and_json_fields
      * @type {string}
